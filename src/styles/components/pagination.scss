@@ -1,0 +1,29 @@
+@use "../base/variables" as *;
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: $spacing-md 0;
+
+  button {
+    background: $primary;
+    border: none;
+    padding: $spacing-xs $spacing-md;
+    margin: 0 $spacing-xs;
+    border-radius: $border-radius;
+
+    &:disabled {
+      background: $secondary;
+      cursor: not-allowed;
+    }
+  }
+
+  span {
+    font-weight: 600;
+    span {
+      margin: 0 $spacing-xs;
+      color: $primary;
+    }
+  }
+}

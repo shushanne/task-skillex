@@ -1,0 +1,74 @@
+@use "../base/variables" as *;
+@use "../base/mixins" as *;
+
+.product-catalog {
+  display: flex;
+  gap: $spacing-sm;
+  min-height: 100vh;
+
+  @include respond-to(mobile) {
+    flex-direction: column;
+  }
+
+  .filter-toggle {
+    display: none;
+    background: $primary;
+    border: none;
+    padding: $spacing-sm $spacing-md;
+    margin-bottom: $spacing-sm;
+    font-weight: 600;
+
+    @include respond-to(mobile) {
+      display: block;
+    }
+  }
+
+  .filter-side {
+    background: $primary;
+    flex: 0 0 250px;
+    padding: $spacing-md;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+
+    @include respond-to(mobile) {
+      width: 100%;
+      max-height: 0;
+      opacity: 0;
+
+      &.open {
+        max-height: 100%;
+        opacity: 1;
+      }
+    }
+
+    .reset-btn {
+      width: 100%;
+      padding: $spacing-sm $spacing-md;
+      margin-top: $spacing-sm;
+      background: transparent;
+      border: 1px solid $text;
+      border-radius: $border-radius;
+      font-weight: 600;
+      color: $text;
+    }
+  }
+
+  .product-list {
+    flex: 1;
+    max-height: 100vh;
+    overflow-y: auto;
+
+    .message {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100%;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: $spacing-md;
+      padding: $spacing-sm;
+    }
+  }
+}

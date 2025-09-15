@@ -1,0 +1,30 @@
+@use "../base/variables" as *;
+@use "../base/mixins" as *;
+
+.sort-by-select {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: $spacing-md;
+
+  label {
+    font-weight: 600;
+    margin-bottom: $spacing-xs;
+    color: $text;
+  }
+
+  select {
+    width: 100%;
+    padding: $spacing-sm;
+    border: 1px solid $secondary;
+    border-radius: $border-radius;
+
+    &:focus {
+      outline: none;
+      border-color: $accent;
+    }
+  }
+
+  @include respond-to(mobile) {
+    width: 100%;
+  }
+}

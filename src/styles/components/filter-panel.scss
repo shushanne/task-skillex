@@ -1,0 +1,36 @@
+@use "../base/variables" as *;
+@use "../base/mixins" as *;
+
+.filter-panel {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: $spacing-md;
+
+  label {
+    font-weight: 600;
+    margin-bottom: $spacing-xs;
+    color: $text;
+  }
+
+  input,
+  select {
+    width: 100%;
+    padding: $spacing-sm;
+    margin-bottom: $spacing-md;
+    border: 1px solid $secondary;
+    border-radius: $border-radius;
+
+    &:focus {
+      outline: none;
+      border-color: $accent;
+    }
+  }
+
+  input[type="range"] {
+    padding: 0;
+  }
+
+  @include respond-to(mobile) {
+    width: 100%;
+  }
+}
