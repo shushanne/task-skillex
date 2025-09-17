@@ -54,6 +54,7 @@ const renderWithStore = (preloadedState) => {
 describe("ProductCatalog Filtering and Sorting Tests", () => {
   const preloadedState = {
     products: {
+      allProducts: mockProducts,
       products: mockProducts,
       loading: false,
       error: null,
